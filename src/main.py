@@ -10,6 +10,8 @@ def main():
     # Necessary Arguements
     parser.add_argument("-wandb_key", required=True,
                         help="Provide your personal Weights & Biases API key here")
+    parser.add_argument("-wandb_environment", required=True,
+                        help="Environment from where the training is started. This is used for grouping the runs in weights and biases. E.g. 'local' or 'github codespace'")
     parser.add_argument("-wandb_projectname", required=True,
                         help="Project name used in weights and biases.")
 
@@ -44,6 +46,7 @@ def main():
 
     training = Training_Starter(
         model_name=args.model_name,
+        wandb_environment=args.wandb_environment,
         task_name=args.task_name,
         seed=args.seed,
         wandb_project_name=args.wandb_projectname,

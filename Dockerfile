@@ -9,7 +9,8 @@ COPY requirements.txt .
 COPY src/ src/
 RUN pip install --no-cache-dir -r requirements.txt
 
-ENV WANDB_KEY=""
+#NV WANDB_KEY=WANDB_API_KEY
+#ENV WANDB_ENVIRONMENT=WANDB_RUN_ENVIRONEMENT
 ENV WANDB_PROJECTNAME="MLops-Project2"
 ENV MODEL_NAME="distilbert-base-uncased"
 ENV TASK_NAME="mrpc"
@@ -20,7 +21,8 @@ ENV BATCH_SIZE=16
 ENV BETA1=0.85
 
 CMD python src/main.py \
-    -wandb_key $WANDB_KEY \
+    -wandb_key $WANDB_API_KEY \
+    -wandb_environment $WANDB_RUN_ENVIRONEMENT \
     -wandb_projectname $WANDB_PROJECTNAME \
     -model_name $MODEL_NAME \
     -task_name $TASK_NAME \

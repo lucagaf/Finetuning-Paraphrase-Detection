@@ -1,0 +1,9 @@
+version: "3.8"
+services:
+  training-network:
+    build :
+      context: .
+      dockerfile: Dockerfile
+    container_name: training
+    env_file:
+      - .env

@@ -6,5 +6,7 @@ env/
 project2
 app
 wandb
+.env
+
 
 

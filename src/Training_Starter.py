@@ -7,6 +7,7 @@ import wandb
 class Training_Starter:
 
     def __init__(self, model_name,
+                 wandb_environment,
                  task_name,
                  seed,
                  wandb_project_name,
@@ -20,7 +21,7 @@ class Training_Starter:
 
         self.epochs = 3  # do not change this
         wandb.login(key=wandb_apikey)
-        self.logger = WandbLogger(project=wandb_project_name, name=f'{lr=}_{batch_size=}_{warmup_steps=}_{beta1=}')
+        self.logger = WandbLogger(project=wandb_project_name, group=wandb_environment, name=f'{lr=}_{batch_size=}_{warmup_steps=}_{beta1=}')
 
         self.model_name = model_name
         self.task_name = task_name
