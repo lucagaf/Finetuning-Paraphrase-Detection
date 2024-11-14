@@ -12,9 +12,9 @@ To build the Docker image, run the following command:
 
 ```bash
 docker-compose build
-'''
+
 
 ```bash
 docker-compose run training
-'''
+
 
