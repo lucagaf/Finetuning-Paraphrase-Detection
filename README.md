@@ -11,10 +11,10 @@ Make sure you have Docker and Docker Compose installed on your machine.
 To build the Docker image, run the following command:
 
 ```bash
-docker-compose build
+docker-compose build```
 
 
 ```bash
-docker-compose run training
+docker-compose run training```
 
 
