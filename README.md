@@ -25,13 +25,14 @@ docker build -t training .
 docker run -e WANDB_API_KEY="<YOUR-WANDB_API_KEY>" -e WANDB_RUN_ENVIRONEMENT="<LOCATION where you start training>" training
 ```
 
-If you want to specify different hyperparameters you can adjust them with specifying the environment variables in the `docker run` command.
+If you want to specify different hyperparameters you can adjust them with adding another argument to the `docker run` command. 
+This will change the docker Environment variable and starts the training run with your desired value. 
 
 ```bash
 docker run -e WANDB_API_KEY="<YOUR-WANDB_API_KEY>" -e WANDB_RUN_ENVIRONEMENT="<LOCATION where you start training>" -e VARIABLE="VALUE" training
 ```
 Those are the availabe hyperparameters to adjust: 
-* WANDB_PROJECTNAME="MLops-Project2"
+*  WANDB_PROJECTNAME="MLops-Project2"
 *  MODEL_NAME="distilbert-base-uncased"
 *  TASK_NAME="mrpc"
 *  SEED=42
@@ -39,8 +40,6 @@ Those are the availabe hyperparameters to adjust:
 *  WARMUP_STEPS=300
 *  BATCH_SIZE=16
 *  BETA1=0.85
-
-
 
 
 
